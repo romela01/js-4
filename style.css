@@ -1,0 +1,322 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: sans-serif;
+}
+body{
+    position: relative;
+    width: 100%;
+    height: 92vh;
+    background-image: url(https://enterprise.press/wp-content/uploads/2019/12/Travel-1600px.jpg);
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+nav{
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    min-height: 55px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.logo{
+    margin-left: 7%;
+    font-size: 22px;
+    color: crimson;
+    cursor: pointer;
+}
+.nav-links{
+    justify-content: space-around;
+    min-width: 55%;
+    display: flex;
+    transition: all 0.5s ease;
+}
+.nav-links li{
+    transition: all 0.5s ease;
+}
+
+.nav-links li a{
+    position: relative;
+    color: white;
+    letter-spacing: 2px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.5s ease;
+}
+
+.nav-links li:hover{
+    transform: scale(1.1);
+}
+.nav-links li a:hover{
+    color: crimson;
+}
+
+
+
+.burger{
+    cursor: pointer;
+    margin-right: 25px;
+    display: none;
+    
+}
+.burger div{
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.1s ease;
+}
+
+
+.form-input{
+    width: 25%;
+    height: 125px;
+    position: absolute;
+    top: 40%;
+    left: 5%;
+}
+.form-input p {
+    font-size: 18px;
+    font-weight: 700;
+}
+.clear{
+    display: none;
+}
+.input{
+    height: 25px;
+    width: 60%;
+    color: white;
+    background-color: rgba(117, 15, 15, 0.5);
+}
+.btnSave{
+    height: 25px;
+    background-color: transparent;
+    color: white;
+    width: 20%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.btnSave:hover{
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.btnClear{
+    width: 30%;
+    height: 25px;
+    display: block;
+    margin-top: 5px;
+    color: red;
+    font-weight: 700;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+.btnClear:hover{
+    background-color: rgb(250, 4, 4, 0.3);
+    cursor: pointer;
+}
+.list li{
+    display: flex;
+    font-size: 22px;
+    color: white;
+}
+.list li span{
+    font-size: 12px;
+    font-weight: 800;
+    color: red;
+    cursor: pointer;
+    margin-left: 3px;
+}
+
+.note p {
+    color: red;
+}
+
+
+@media(max-width:1124px){
+    .nav-links li{
+        margin-left: 25px;
+    }
+    .form-input{
+        width: 30%;
+    }
+    
+}
+@media(max-width:768px){
+    .nav-links{
+        width: 100%;
+        position: absolute;
+        height: 92vh;
+        top: 55px;
+        right: 0px;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: translate(100%);
+        z-index: 1;
+    }
+    .burger{
+        display: block;
+    }
+    .nav-links li{
+        opacity: 0;
+        
+    }
+    .nav-links li:hover{
+        transform: scale(1.1);
+    }
+    .nav-links li a:hover:after {
+        position: absolute;
+        content: "";
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: white;
+    }
+    .form-input{
+        width: 35%;
+    }
+    .form-input p {
+        font-size: 14px;
+    }
+    .input{
+        width: 65%;
+    }
+    .btnSave{
+        width: 30%;
+    }
+    .btnClear{
+        width: 40%;
+    }
+    .list li{
+        font-size: 18px;
+    }
+  
+}
+
+@media(max-width:414px){
+    .logo{
+        font-size: 18px;
+    }
+    .form-input{
+        width: 45%;
+    }
+    .form-input p {
+        font-size: 12px;
+    }
+    .btnSave{
+        width: 30%;
+    }
+    .btnClear{
+        width: 50%;
+    }
+    .list li{
+        font-size: 16px;
+    }
+}
+.nav-active{
+    transform: translateX(0%);
+}
+.change .line1{
+    transform: rotate(-45deg) translate(-5px, 6px) ;
+}
+.change .line2{
+    opacity: 0;
+
+}
+.change .line3{
+    transform: rotate(45deg) translate(-5px, -6px) ;
+}
+
+@keyframes navAnim{
+    0%{
+        opacity: 0;
+        transform: translate(50px, 50px);
+    }
+    50%{
+        transform: translateX(-25px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+}
+@keyframes aColor{
+    0%{
+        color: crimson;
+    }
+    50%{
+        color: crimson;
+    }
+    to{
+        color: white;
+    }
+}
+
+/* form-input animation */
+
+
+@keyframes pAnim{
+    from{
+        opacity: 1;
+
+    }
+    to{
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+}
+@keyframes sAnim{
+    from{
+        opacity: 1;
+
+    }
+    to{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+}
+@keyframes cAnim{
+    from{
+        opacity: 1;
+
+    }
+    to{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+}
+@keyframes iAnim{
+    from{
+        opacity: 1;
+
+    }
+    to{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+}
+
+
+
+.p-anim{
+    animation: pAnim 1s ease forwards;
+}
+.s-anim{
+    animation: sAnim 1s ease forwards;
+}
+.c-anim{
+    animation: cAnim 1s ease forwards;
+}
+.i-anim{
+    animation: iAnim 1s ease forwards;
+}
+
